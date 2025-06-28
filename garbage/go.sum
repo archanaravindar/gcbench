@@ -1,0 +1,4 @@
+golang.org/x/benchmarks v0.0.0-20250616000140-dde2d6bd49fd h1:iZhcnYGQhIrwqKRwQOUlJUp2D2PbN1e1JjdCF2zsj18=
+golang.org/x/benchmarks v0.0.0-20250616000140-dde2d6bd49fd/go.mod h1:oHBpGafh/gD2cRqCvyeceJh/+9ynbraxM5qlW8b0zk0=
+golang.org/x/sys v0.33.0 h1:q3i8TbbEz+JRD9ywIRlyRAQbM0qF7hu24q3teo2hbuw=
+golang.org/x/sys v0.33.0/go.mod h1:BJP2sWEmIv4KK5OTEluFJCKSidICx8ciO85XgH3Ak8k=
