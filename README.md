@@ -1,14 +1,14 @@
 # gcbench
 GC benchmarks collection pulled from older Go GC benchmarks and recent ones
 
-bintree/
+1. bintree/
 To use this benchmark simply run 
 
 go build bintree.go 
 
 ./bintree 
 
-garbage/ 
+2. garbage/ 
 
 requires golang.org/x/benchmarks as indicated by go.mod file 
 
@@ -18,7 +18,7 @@ go build garbage.go nethttp.go
 
 ./garbage
 
-oldbench/
+3. oldbench/
 
 Simply running make will build the binaries
 
