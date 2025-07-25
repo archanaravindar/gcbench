@@ -1,0 +1,50 @@
+From ca9972d9fe46de8d783e1175d4a445c8f10c589f Mon Sep 17 00:00:00 2001
+From: Super User <root@ibm-p10-01-lp06.build.eng.rdu2.redhat.com>
+Date: Fri, 25 Jul 2025 08:56:03 -0400
+Subject: [PATCH 1/1] patch to exclude cockroachdb benchmark
+
+---
+ sweet/cmd/sweet/benchmark.go        | 7 -------
+ sweet/cmd/sweet/integration_test.go | 1 -
+ 2 files changed, 8 deletions(-)
+
+diff --git a/sweet/cmd/sweet/benchmark.go b/sweet/cmd/sweet/benchmark.go
+index 03ca3ad..0be68dc 100644
+--- a/sweet/cmd/sweet/benchmark.go
++++ b/sweet/cmd/sweet/benchmark.go
+@@ -42,12 +42,6 @@ var allBenchmarks = []benchmark{
+ 		harness:     harnesses.BleveIndex(),
+ 		generator:   generators.BleveIndex(),
+ 	},
+-	{
+-		name:        "cockroachdb",
+-		description: "Distributed database",
+-		harness:     harnesses.CockroachDB{},
+-		generator:   generators.None{},
+-	},
+ 	{
+ 		name:        "etcd",
+ 		description: "Distributed key-value store",
+@@ -105,7 +99,6 @@ var benchmarkGroups = func() map[string][]*benchmark {
+ 
+ 	m["default"] = []*benchmark{
+ 		allBenchmarksMap["bleve-index"],
+-		allBenchmarksMap["cockroachdb"],
+ 		allBenchmarksMap["etcd"],
+ 		allBenchmarksMap["esbuild"],
+ 		allBenchmarksMap["go-build"],
+diff --git a/sweet/cmd/sweet/integration_test.go b/sweet/cmd/sweet/integration_test.go
+index b6b8ed4..67fe518 100644
+--- a/sweet/cmd/sweet/integration_test.go
++++ b/sweet/cmd/sweet/integration_test.go
+@@ -203,7 +203,6 @@ func TestSweetEndToEnd(t *testing.T) {
+ 	for i, shard := range []shard{
+ 		{"tile38", 2},
+ 		{"go-build", 4},
+-		{"cockroachdb", 1},
+ 		{"etcd", 1},
+ 		{"esbuild", 1},
+ 		{"bleve-index", 1},
+-- 
+2.47.3
+

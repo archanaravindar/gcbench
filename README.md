@@ -32,4 +32,13 @@ and they can be run one by one by
 
 ./tree2
 
+4. sweet suite is an integration test of sorts and tests various layers of Go along with the GC 
+
+git clone https://go.googlesource.com/benchmarks
+Inorder to run sweet on powerpc, patch the file to exclude cockroachdb 
+
+cp exclude-cockroachdb.patch benchmarks/sweet # required only for powerpc
+cd benchmarks/sweet 
+patch -p1<exclude-cockroachdb.patch # required only for powerpc 
+Follow the instructions in benchmarks/sweet/README.md
 
